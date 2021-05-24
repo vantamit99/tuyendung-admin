@@ -1,0 +1,28 @@
+<div class="login">
+    <h1>Login</h1>
+    <form [formGroup]="formLogin" (submit)="onSubmit()">
+        <div class="form__controls">
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" placeholder="Please enter email" formControlName="email" />
+                <mat-error *ngIf="formLogin.controls.email.invalid">{{checkErrEmail()}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form__controls">
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" placeholder="Please enter password" formControlName="password" />
+                <mat-error *ngIf="formLogin.controls.password.invalid">Password is required*</mat-error>
+            </mat-form-field>
+        </div>    
+        <div class="form__controls">
+            <div class="message__error">{{messageErr}}</div>
+        </div>  
+        <div class="login__actions form__controls">
+            <div class="login__actions--forgot">
+                <a href="javascript:void(0)">Forgot Password</a>
+            </div>
+            <button mat-stroked-button [disabled]="formLogin.invalid">Login</button>            
+        </div>
+    </form>
+</div>

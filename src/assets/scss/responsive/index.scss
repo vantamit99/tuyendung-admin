@@ -1,0 +1,21 @@
+@media (max-width: 1920px) {
+    @import './1920/index';
+}
+@media (max-width: 1400px) {
+    @import './1400/index';
+}
+@media (max-width: 976px) {
+    @import './976/index';
+}
+@media (max-width: 765px) {
+    @import './765/index';
+}
+@media (max-width: 560px) {
+    @import './560/index';
+}
+@media (max-width: 425px) {
+    @import './425/index';
+}
+@media (max-width: 375px) {
+    @import './375/index';
+}

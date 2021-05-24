@@ -1,0 +1,42 @@
+<div class="page">
+    <h1 class="title">CATEGORIES</h1>
+    <div class="filter"> 
+        <button mat-button (click)="onAllData()">            
+            <span>All Data</span>
+        </button>      
+        <button mat-button (click)="onFilter()">
+            <mat-icon>settings</mat-icon> 
+            <span class="letter">Filter</span>
+        </button>
+    </div>
+    <table class="table__general">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>SLUG</th>        
+            <th>CREATED_AT</th>
+            <th>UPDATED_AT</th>
+            <th>STATUS</th>
+            <th>ACTIONS</th>
+            <th>
+                <button mat-icon-button (click)="onCreate()"><mat-icon>add_circle</mat-icon></button>
+            </th>
+        </tr>
+        <tr *ngFor="let cate of arrCate">
+            <td>{{cate.id}}</td>
+            <td>{{cate.name}}</td>
+            <td>{{cate.slug}}</td>        
+            <td>{{cate.created_at | date:'medium'}}</td>
+            <td>{{cate.updated_at | date:'medium'}}</td>        
+            <td>
+                <mat-slide-toggle [checked]="cate.status == 1 ? true : false"></mat-slide-toggle>
+            </td>
+            <td id="col__action">                        
+                <button mat-icon-button (click)="onDetail(cate)"><mat-icon>remove_red_eye</mat-icon></button>
+                <button mat-icon-button (click)="onEdit($event, cate)"><mat-icon>edit</mat-icon></button>
+                <button mat-icon-button (click)="onDelete($event, cate.id)"><mat-icon>delete</mat-icon></button>
+            </td>
+            <td id="col__add"></td>
+        </tr>
+    </table>
+</div>

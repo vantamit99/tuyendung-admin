@@ -1,0 +1,26 @@
+.filter__dialog--title.mat-dialog-title {
+    margin-bottom: 0;
+}
+.filter__flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+.filter__item {
+    width: 50%;
+    padding: 5px 15px;
+    box-sizing: border-box;
+    mat-form-field {
+        width: 100%;
+    } 
+    &--alone {
+        width: 100%;
+    }
+}
+.btn__filter.mat-button {
+    padding: 5px 30px;
+    background-color: #1856c7;
+    color: #fff;
+}
+.mat-dialog-content {
+    overflow: initial !important;
+}

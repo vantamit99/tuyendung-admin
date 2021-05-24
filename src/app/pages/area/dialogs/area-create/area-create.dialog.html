@@ -1,0 +1,30 @@
+<div class="admin-wrapper dialog__create">
+    <h2 class="title" mat-dialog-title>Areas Create</h2>
+    <mat-dialog-content>
+        <form [formGroup]="formCreate" (submit)="onCreate()">
+            <div class="flex">
+                <div class="item">
+                    <mat-form-field>
+                        <mat-label>Name</mat-label>
+                        <input matInput type="text" placeholder="Please enter name city" formControlName="name" />
+                    </mat-form-field>
+                </div>                
+                <div class="item">
+                    <mat-form-field>
+                        <mat-label>Status</mat-label>
+                        <mat-select formControlName="status">
+                            <mat-option *ngFor="let val of arrStatus" [value]="val">{{val}}</mat-option>                                             
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </form>
+    </mat-dialog-content>
+    <mat-dialog-actions align="end">
+        <button class="btn__create" mat-button (click)="onCreate()" [disabled]="formCreate.invalid">Save</button>
+        <button mat-button mat-dialog-close>Close</button>
+    </mat-dialog-actions>
+</div>
+
+
+

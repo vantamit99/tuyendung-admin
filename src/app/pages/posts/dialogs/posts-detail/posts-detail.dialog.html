@@ -1,0 +1,121 @@
+<div class="postsDetail detail__dialog">
+    <mat-dialog-actions align="end">
+        <button class="btn__close" mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+    </mat-dialog-actions>
+    <mat-dialog-content>
+        <div class="detail__content">
+            <div class="box" *ngFor="let posts of arrPosts">
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">ID</div>
+                            <div class="item__sub--value">{{posts.id}}</div>
+                        </div>
+                    </div>      
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">TITLE</div>
+                            <div class="item__sub--value">{{posts.title}}</div>
+                        </div>
+                    </div>  
+                </div>  
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">SLUG</div>
+                            <div class="item__sub--value">{{posts.slug}}</div>
+                        </div>
+                    </div>   
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">IMAGE</div>
+                            <div class="item__sub--value item__sub--image">
+                                <img [src]="posts.image" alt="">
+                            </div>
+                        </div>
+                    </div>     
+                </div>      
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">EXPIRED</div>
+                            <div class="item__sub--value">{{posts.expired}}</div>
+                        </div>
+                    </div>                    
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">STATUS</div>
+                            <div class="item__sub--value">{{posts.status}}</div>
+                        </div>
+                    </div>     
+                </div>                      
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">CREATED_AT</div>
+                            <div class="item__sub--value">{{posts.created_at | date:'medium'}}</div>
+                        </div>
+                    </div>   
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">CREATED_BY_ID</div>
+                            <div class="item__sub--value">{{posts.created_by_id}}</div>
+                        </div>
+                    </div>     
+                </div>  
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">UPDATED_AT</div>
+                            <div class="item__sub--value">{{posts.updated_at | date:'medium'}}</div>
+                        </div>
+                    </div>   
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">UPDATED_BY_ID</div>
+                            <div class="item__sub--value">{{posts.updated_by_id}}</div>
+                        </div>
+                    </div>     
+                </div>                  
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">CATE_ID</div>
+                            <div class="item__sub--value">{{posts.category.id}}</div>
+                        </div>
+                    </div>   
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">CATE_NAME</div>
+                            <div class="item__sub--value">{{posts.category.name}}</div>
+                        </div>
+                    </div>     
+                </div>    
+                <div class="flex">
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">AREA_ID</div>
+                            <div class="item__sub--value">{{posts.area.id}}</div>
+                        </div>
+                    </div>   
+                    <div class="item">
+                        <div class="item__sub">
+                            <div class="item__sub--title">AREA_NAME</div>
+                            <div class="item__sub--value">{{posts.area.name}}</div>
+                        </div>
+                    </div>     
+                </div>    
+                <div class="flex">
+                    <div class="item item__content">
+                        <div class="item__sub">
+                            <div class="item__sub--title">CONTENT</div>
+                            <div class="item__sub--value" [innerHTML]="posts.content"></div>
+                        </div>
+                    </div>                    
+                </div>                     
+            </div>
+        </div>
+    </mat-dialog-content>    
+</div>
+
+

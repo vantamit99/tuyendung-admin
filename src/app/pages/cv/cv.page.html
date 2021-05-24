@@ -1,0 +1,43 @@
+<div class="page">
+    <h1 class="title">CV</h1>
+    <div class="filter"> 
+        <button mat-button (click)="onAllData()">            
+            <span>All Data</span>
+        </button>      
+        <button mat-button (click)="onFilter()">
+            <mat-icon>settings</mat-icon> 
+            <span class="letter">Filter</span>
+        </button>
+    </div>
+    <table class="table__general">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE</th>
+            <th>GENDER</th>
+            <th>CREATED_AT</th>        
+            <th>ACTIONS</th>
+            <!-- <th>
+                <button mat-icon-button (click)="onCreate()"><mat-icon>add_circle</mat-icon></button>
+            </th> -->
+        </tr>    
+        <tr *ngFor="let cv of arrCv">
+            <td>{{cv.id}}</td>
+            <td>{{cv.name}}</td>
+            <td>{{cv.email}}</td>
+            <td>{{cv.phone}}</td>
+            <td *ngIf="cv.gender; else elseGender">Nam</td>
+            <ng-template> #elseGender>
+                <td>Nữ</td>
+            </ng-template>        
+            <td>{{cv.created_at | date:'medium'}}</td>             
+            <td id="col__action">            
+                <button mat-icon-button (click)="onDetail(cv)"><mat-icon>remove_red_eye</mat-icon></button>
+                <!-- <button mat-icon-button (click)="onEdit($event, cv)"><mat-icon>edit</mat-icon></button> -->
+                <button mat-icon-button (click)="onDelete($event, cv.id)"><mat-icon>delete</mat-icon></button>
+            </td>
+            <!-- <td></td> -->
+        </tr>
+    </table>
+</div>

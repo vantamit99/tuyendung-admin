@@ -1,0 +1,8 @@
+.admin-wrapper .sidebar {
+    max-width: 300px;
+}
+.admin-wrapper header,
+.admin-wrapper .body-content {
+    max-width: calc(100% - 300px);
+    margin-left: 300px;
+}

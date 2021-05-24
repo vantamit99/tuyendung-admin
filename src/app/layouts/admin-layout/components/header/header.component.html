@@ -1,0 +1,21 @@
+<header>
+    <div class="topbar">
+        <div class="search">
+            <mat-form-field>
+                <mat-label>Search</mat-label>
+                <input matInput type="text" placeholder="Please enter search..." (keyup)="onEmitValueSearch($event)" />
+            </mat-form-field>
+        </div>
+        <div class="actions">
+            <div class="actions__email"><a href="javascript:void(0)"><mat-icon matBadge="20" matBadgeColor="warn">email</mat-icon></a></div>        
+            <div class="actions__image">
+                <img src="./assets/images/user.jpg" [matMenuTriggerFor]="menu" />                
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/admin/profile">Profile</button>
+                    <button mat-menu-item>Setting</button>
+                    <button mat-menu-item (click)="onLogout()">Logout</button>
+                  </mat-menu>
+            </div>
+        </div>
+    </div>
+</header>

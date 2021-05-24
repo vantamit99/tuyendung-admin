@@ -1,0 +1,17 @@
+@mixin centerPositionY {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+@mixin centerPositionX {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin centerAllPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

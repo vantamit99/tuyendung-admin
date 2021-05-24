@@ -1,0 +1,17 @@
+@mixin flexJandA($justifyCotent, $alignItem) {
+    display: flex;
+    justify-content: $justifyCotent;
+    align-items: $alignItem;
+}
+@mixin flex($flexWrap, $direction, $justifyCotent, $alignItem) {
+    display: flex;
+    flex-wrap: $flexWrap;
+    flex-direction: $direction;
+    justify-content: $justifyCotent;
+    align-items: $alignItem;
+}
+@mixin threeDot() {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}

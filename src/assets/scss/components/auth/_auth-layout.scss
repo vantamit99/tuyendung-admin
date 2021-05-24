@@ -1,0 +1,11 @@
+.auth {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+.auth__area {
+    @include centerAllPosition;
+    min-width: 850px;      
+    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}

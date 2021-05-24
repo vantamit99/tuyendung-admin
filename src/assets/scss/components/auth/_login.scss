@@ -1,0 +1,30 @@
+.login {
+    h1 {
+        height: 40px;
+        line-height: 40px;
+        padding: 10px 0;
+        background-color: #2f7bec;
+        color: #fff;
+        text-align: center;
+    }
+    form {
+        padding: 20px 50px 40px 50px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    mat-form-field {
+        width: 100%;        
+    }
+    .form__controls {
+        margin-bottom: 30px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    .login__actions {
+        text-align: center;
+        &--forgot {
+           text-align: right;
+        }
+    }
+}

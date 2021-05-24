@@ -1,0 +1,51 @@
+<h1 class="filter__dialog--title" mat-dialog-title align="end">
+    <button class="btn__close" mat-icon-button mat-dialog-close><mat-icon>close</mat-icon></button>
+</h1>
+<mat-dialog-content>
+    <form [formGroup]="formFilter" (submit)="onFilter()">
+        <div class="filter__flex">
+            <div class="filter__item">
+                <mat-form-field>
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Please enter search title" formControlName="title" />
+                </mat-form-field>
+            </div>
+            <div class="filter__item">
+                <mat-form-field>
+                    <mat-label>Area</mat-label>
+                    <mat-select formControlName="areaId">
+                        <mat-option *ngFor="let area of arrArea" [value]="area.id">{{area.name}}</mat-option>                           
+                    </mat-select>
+                  </mat-form-field>
+            </div>
+            <div class="filter__item">
+                <mat-form-field>
+                    <mat-label>Enter a date range created_at</mat-label>
+                    <mat-date-range-input [rangePicker]="pickerCreate">
+                        <input matStartDate placeholder="Start date" formControlName="created_at_start">
+                        <input matEndDate placeholder="End date" formControlName="created_at_end">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="pickerCreate"></mat-datepicker-toggle>
+                    <mat-date-range-picker #pickerCreate></mat-date-range-picker>
+                </mat-form-field>
+            </div>
+            <div class="filter__item">
+                <mat-form-field>
+                    <mat-label>Enter a date range updated_at</mat-label>
+                    <mat-date-range-input [rangePicker]="pickerUpdate">
+                        <input matStartDate placeholder="Start date" formControlName="updated_at_start">
+                        <input matEndDate placeholder="End date" formControlName="updated_at_end">
+                    </mat-date-range-input>
+                    <mat-datepicker-toggle matSuffix [for]="pickerUpdate"></mat-datepicker-toggle>
+                    <mat-date-range-picker #pickerUpdate></mat-date-range-picker>
+                </mat-form-field>
+            </div>            
+        </div>
+        <div>
+            <mat-slide-toggle formControlName="status">Status</mat-slide-toggle>
+        </div>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions align="center">
+    <button class="btn__filter" mat-button (click)="onFilter()">Filter</button>
+</mat-dialog-actions>
